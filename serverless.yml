@@ -1,0 +1,23 @@
+service: readit-webhook
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  exclude:
+  include:
+    - src/**/*
+
+
+functions:
+  fulfillment:
+    handler: handler.fulfillment
+    events:
+      - http:
+          path: fulfillment
+          method: post
