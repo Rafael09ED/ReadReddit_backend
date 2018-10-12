@@ -1,10 +1,9 @@
-import {DialogflowApp} from 'actions-on-google'
-
-const {WebhookClient} = require('dialogflow-fulfillment');
-
+const {Suggestion} = require('dialogflow-fulfillment');
 
 export const name = 'Default Welcome Intent';
 
 export function handler(agent: any) {
-    agent.add(`Welcome to my agent!`);
+    agent.add("What subreddit would you like to read?");
+    agent.agent.add(new Suggestion("read r/news"));
+    agent.agent.add(new Suggestion("read world news"));
 }

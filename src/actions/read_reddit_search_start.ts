@@ -14,9 +14,11 @@ export function handler(agent: any) {
         refreshToken: process.env.r_refreshToken
     });
     return r.getHot()
-        .then(posts => {
+        .then(function (posts: any) {
             agent.add(posts[0].title);
             console.log(posts[0].title);
             return Promise.resolve();
-        }).then(value => Promise.resolve())
+        }).then(function (value: any) {
+            return Promise.resolve();
+        })
 }
