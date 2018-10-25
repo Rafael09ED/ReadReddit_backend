@@ -1,5 +1,4 @@
 import {Request, Response} from 'express'
-import {DialogflowApp} from 'actions-on-google'
 
 const {WebhookClient} = require('dialogflow-fulfillment');
 
@@ -14,7 +13,7 @@ export function createDialogflowApp(request: Request, response: Response) {
 
     interface Intent {
         name: string,
-        handler: (agent: any) => void
+        handler: (agent) => void
     }
 
     const intents: Intent[] = [

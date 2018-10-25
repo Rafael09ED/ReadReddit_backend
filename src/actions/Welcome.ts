@@ -2,8 +2,9 @@ const {Suggestion} = require('dialogflow-fulfillment');
 
 export const name = 'Default Welcome Intent';
 
-export function handler(agent: any) {
+// noinspection JSUnusedGlobalSymbols
+export function handler(agent) {
     agent.add("What subreddit would you like to read?");
-    agent.agent.add(new Suggestion("read r/news"));
-    agent.agent.add(new Suggestion("read world news"));
+    agent.add(new Suggestion("read r/news"));
+    agent.add(new Suggestion("read world news"));
 }
